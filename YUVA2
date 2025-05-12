@@ -1,0 +1,3 @@
+from textblob import TextBlob
+df['polarity'] = df['text'].apply(lambda x: TextBlob(str(x)).sentiment.polarity)
+sns.boxplot(x='label', y='polarity', data=df)
